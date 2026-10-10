@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:40:38 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/09 19:45:15 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/10 20:30:59 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ void	init_stack(t_stack *stack)
 	stack->size = 0;
 }
 
-void	push_to_stack(t_stack *stack, t_node *new_node)
+void	add_to_bottom(t_stack *stack, t_node *new_node)
 {
+	if (!stack || !new_node)
+		return ;
 	if (!stack->size)
 	{
 		stack->top = new_node;
@@ -41,9 +43,25 @@ void	push_to_stack(t_stack *stack, t_node *new_node)
 		stack->size = 1;
 	}
 	else {
-		stack->top->next = new_node;
-		new_node->prev = stack->top;
-		stack->top = new_node;
+		stack->bottom->next = new_node;
+		new_node->prev = stack->bottom;
+		stack->bottom = new_node;
 		stack->size += 1;
 	}
+}
+
+void	free_stack(t_stack *stack)
+{
+	t_node	*next;
+
+	if (!stack)
+		return ;
+	while (stack->top)
+	{
+		next = stack->top->next;
+		free(stack->top);
+		stack->top = next;
+	}
+	stack->bottom = NULL;
+	stack->size = 0;
 }
