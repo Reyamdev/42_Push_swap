@@ -6,15 +6,15 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:40:38 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/10 20:30:59 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/12 14:19:56 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node *create_s_node(int value)
+t_node	*create_s_node(int value)
 {
-	t_node *new_node;
+	t_node	*new_node;
 
 	new_node = malloc(sizeof(t_node));
 	if (!new_node)
@@ -42,7 +42,8 @@ void	add_to_bottom(t_stack *stack, t_node *new_node)
 		stack->bottom = new_node;
 		stack->size = 1;
 	}
-	else {
+	else
+	{
 		stack->bottom->next = new_node;
 		new_node->prev = stack->bottom;
 		stack->bottom = new_node;
