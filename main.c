@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 19:42:16 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/13 13:49:22 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/15 12:08:01 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,63 +81,63 @@ static void	print_stack(t_stack *stack)
 // 	return (0);
 // }
 
-int	main(void)
-{
-	t_stack	a;
-	t_stack	b;
+// int	main(void)
+// {
+// 	t_stack	a;
+// 	t_stack	b;
 
-	init_stack(&a);
-	init_stack(&b);
+// 	init_stack(&a);
+// 	init_stack(&b);
 
-	add_to_bottom(&a, create_s_node(10));
-	add_to_bottom(&a, create_s_node(20));
-	add_to_bottom(&a, create_s_node(30));
+// 	add_to_bottom(&a, create_s_node(10));
+// 	add_to_bottom(&a, create_s_node(20));
+// 	add_to_bottom(&a, create_s_node(30));
 
-	add_to_bottom(&b, create_s_node(40));
-	add_to_bottom(&b, create_s_node(50));
-	add_to_bottom(&b, create_s_node(60));
+// 	add_to_bottom(&b, create_s_node(40));
+// 	add_to_bottom(&b, create_s_node(50));
+// 	add_to_bottom(&b, create_s_node(60));
 
-	printf("START\n");
-	printf("A: ");
-	print_stack(&a);
-	printf("B: ");
-	print_stack(&b);
+// 	printf("START\n");
+// 	printf("A: ");
+// 	print_stack(&a);
+// 	printf("B: ");
+// 	print_stack(&b);
 
-	printf("\n--- RA ---\n");
-	ra(&a);
-	printf("A: ");
-	print_stack(&a);
+// 	printf("\n--- RA ---\n");
+// 	ra(&a);
+// 	printf("A: ");
+// 	print_stack(&a);
 
-	printf("\n--- RRA ---\n");
-	rra(&a);
-	printf("A: ");
-	print_stack(&a);
+// 	printf("\n--- RRA ---\n");
+// 	rra(&a);
+// 	printf("A: ");
+// 	print_stack(&a);
 
-	printf("\n--- RB ---\n");
-	rb(&b);
-	printf("B: ");
-	print_stack(&b);
+// 	printf("\n--- RB ---\n");
+// 	rb(&b);
+// 	printf("B: ");
+// 	print_stack(&b);
 
-	printf("\n--- RRB ---\n");
-	rrb(&b);
-	printf("B: ");
-	print_stack(&b);
+// 	printf("\n--- RRB ---\n");
+// 	rrb(&b);
+// 	printf("B: ");
+// 	print_stack(&b);
 
-	printf("\n--- RR ---\n");
-	rr(&a, &b);
-	printf("A: ");
-	print_stack(&a);
-	printf("B: ");
-	print_stack(&b);
+// 	printf("\n--- RR ---\n");
+// 	rr(&a, &b);
+// 	printf("A: ");
+// 	print_stack(&a);
+// 	printf("B: ");
+// 	print_stack(&b);
 
-	printf("\n--- RRR ---\n");
-	rrr(&a, &b);
-	printf("A: ");
-	print_stack(&a);
-	printf("B: ");
-	print_stack(&b);
+// 	printf("\n--- RRR ---\n");
+// 	rrr(&a, &b);
+// 	printf("A: ");
+// 	print_stack(&a);
+// 	printf("B: ");
+// 	print_stack(&b);
 
-	free_stack(&a);
-	free_stack(&b);
-	return (0);
-}
+// 	free_stack(&a);
+// 	free_stack(&b);
+// 	return (0);
+// }

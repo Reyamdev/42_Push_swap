@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 18:32:32 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/13 13:35:19 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/15 11:46:56 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,25 @@ static int	rotate_forwards(t_stack *stack)
 	return (1);
 }
 
-void	rra(t_stack *stack)
+void	rra(t_stack *stack, t_stats *stats)
 {
 	if (rotate_forwards(stack))
+	{
+		record_operation(stats, OP_RRA);
 		ft_putstr_fd("rra\n", 1);
+	}
 }
 
-void	rrb(t_stack *stack)
+void	rrb(t_stack *stack, t_stats *stats)
 {
 	if (rotate_forwards(stack))
+	{
+		record_operation(stats, OP_RRB);
 		ft_putstr_fd("rrb\n", 1);
+	}
 }
 
-void	rrr(t_stack *stack_a, t_stack *stack_b)
+void	rrr(t_stack *stack_a, t_stack *stack_b, t_stats *stats)
 {
 	int	a_rotate;
 	int	b_rotate;
@@ -49,5 +55,8 @@ void	rrr(t_stack *stack_a, t_stack *stack_b)
 	a_rotate = rotate_forwards(stack_a);
 	b_rotate = rotate_forwards(stack_b);
 	if (a_rotate || b_rotate)
+	{
+		record_operation(stats, OP_RRR);
 		ft_putstr_fd("rrr\n", 1);
+	}
 }

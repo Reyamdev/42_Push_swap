@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:41:04 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/14 11:52:47 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/15 11:48:43 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <limits.h>
-
-// ra  = top becomes bottom
-// rra = bottom becomes top
 
 typedef struct s_node
 {
@@ -50,6 +47,29 @@ typedef struct s_config
 	int			bench;
 }	t_config;
 
+//bench stuff
+typedef enum e_operation
+{
+	OP_SA,
+	OP_SB,
+	OP_SS,
+	OP_PA,
+	OP_PB,
+	OP_RA,
+	OP_RB,
+	OP_RR,
+	OP_RRA,
+	OP_RRB,
+	OP_RRR,
+	OP_COUNT
+}	t_operation;
+
+typedef struct s_stats
+{
+	unsigned long	total;
+	unsigned long	operations[OP_COUNT];
+}	t_stats;
+
 //parsing
 t_node	*create_s_node(int value);
 void	init_stack(t_stack *stack);
@@ -59,17 +79,21 @@ int		parse_and_add(t_stack *a, char *arg);
 int		parse_arguments(t_stack *a, t_config *config, int argc, char **argv);
 double	calculate_disorder(t_stack *stack);
 
+//bench
+void	init_stats(t_stats *stats);
+void	record_operation(t_stats *stats, t_operation op);
+
 //operations
-void	sa(t_stack *stack);
-void	sb(t_stack *stack);
-void	ss(t_stack *stack_a, t_stack *stack_b);
-void	pa(t_stack *stack_a, t_stack *stack_b);
-void	pb(t_stack *stack_b, t_stack *stack_a);
-void	ra(t_stack *stack);
-void	rb(t_stack *stack);
-void	rr(t_stack *stack_a, t_stack *stack_b);
-void	rra(t_stack *stack);
-void	rrb(t_stack *stack);
-void	rrr(t_stack *stack_a, t_stack *stack_b);
+void	sa(t_stack *stack, t_stats *stats);
+void	sb(t_stack *stack, t_stats *stats);
+void	ss(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
+void	pa(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
+void	pb(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
+void	ra(t_stack *stack, t_stats *stats);
+void	rb(t_stack *stack, t_stats *stats);
+void	rr(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
+void	rra(t_stack *stack, t_stats *stats);
+void	rrb(t_stack *stack, t_stats *stats);
+void	rrr(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 
 #endif

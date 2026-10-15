@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/11 13:02:44 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/12 14:09:26 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/15 11:34:01 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,20 @@ static int	push(t_stack *dest, t_stack *src)
 	return (1);
 }
 
-void	pa(t_stack *stack_a, t_stack *stack_b)
+void	pa(t_stack *stack_a, t_stack *stack_b, t_stats *stats)
 {
 	if (push(stack_a, stack_b))
+	{
+		record_operation(stats, OP_PA);
 		ft_putstr_fd("pa\n", 1);
+	}
 }
 
-void	pb(t_stack *stack_a, t_stack *stack_b)
+void	pb(t_stack *stack_a, t_stack *stack_b, t_stats *stats)
 {
 	if (push(stack_b, stack_a))
+	{
+		record_operation(stats, OP_PB);
 		ft_putstr_fd("pb\n", 1);
+	}
 }
