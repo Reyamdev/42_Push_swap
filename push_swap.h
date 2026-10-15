@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:41:04 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/15 11:48:43 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/15 15:21:35 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef struct s_node
 {
 	int				value;
+	int				rank;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
@@ -70,6 +71,13 @@ typedef struct s_stats
 	unsigned long	operations[OP_COUNT];
 }	t_stats;
 
+typedef struct s_runtime
+{
+	t_config	*config;
+	t_stats		*stats;
+	double		disorder;
+}	t_runtime;
+
 //parsing
 t_node	*create_s_node(int value);
 void	init_stack(t_stack *stack);
@@ -82,18 +90,21 @@ double	calculate_disorder(t_stack *stack);
 //bench
 void	init_stats(t_stats *stats);
 void	record_operation(t_stats *stats, t_operation op);
-
+void	print_bench(t_stats *stats, double disorder, t_strategy strategy);
 //operations
 void	sa(t_stack *stack, t_stats *stats);
 void	sb(t_stack *stack, t_stats *stats);
 void	ss(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 void	pa(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
-void	pb(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
+void	pb(t_stack *stack_b, t_stack *stack_a, t_stats *stats);
 void	ra(t_stack *stack, t_stats *stats);
 void	rb(t_stack *stack, t_stats *stats);
 void	rr(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 void	rra(t_stack *stack, t_stats *stats);
 void	rrb(t_stack *stack, t_stats *stats);
 void	rrr(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
+
+//simple sort
+void	simple_sort(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 
 #endif
