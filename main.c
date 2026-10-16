@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 19:42:16 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/15 15:25:20 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/16 16:07:36 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ static void	run_strategy(t_stack *a, t_stack *b, t_runtime *runtime)
 		adaptive_sort(a, b, runtime->stats, runtime->disorder);
 }
 
+
+//MAIN BELOW - DO NOT TOUCH/////////////////////////////////////////////////////
+
 int	main(int argc, char **argv)
 {
 	t_stack		a;
@@ -80,6 +83,8 @@ int	main(int argc, char **argv)
 	free_stack(&b);
 	return (0);
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 // int	main(void)
 // {
@@ -116,5 +121,28 @@ int	main(int argc, char **argv)
 
 // 	free_stack(&a);
 // 	free_stack(&b);
+// 	return (0);
+// }
+
+// int	main(void)
+// {
+// 	t_stack	stack;
+// 	t_node	*curr;
+
+// 	init_stack(&stack);
+// 	add_to_bottom(&stack, create_s_node(42));
+// 	add_to_bottom(&stack, create_s_node(-3));
+// 	add_to_bottom(&stack, create_s_node(10));
+// 	add_to_bottom(&stack, create_s_node(99));
+
+// 	assign_rank(&stack);
+
+// 	curr = stack.top;
+// 	while (curr)
+// 	{
+// 		printf("value: %d | rank: %d\n", curr->value, curr->rank);
+// 		curr = curr->next;
+// 	}
+// 	free_stack(&stack);
 // 	return (0);
 // }

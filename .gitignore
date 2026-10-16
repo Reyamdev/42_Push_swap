@@ -2,3 +2,5 @@ test_ps
 test_parser.sh
 test.c
 test_simple
+a.out
+test_rank

@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:41:04 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/15 15:21:35 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/16 16:29:53 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,11 @@ void	rra(t_stack *stack, t_stats *stats);
 void	rrb(t_stack *stack, t_stats *stats);
 void	rrr(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 
+//sorting util
+void	assign_rank(t_stack *stack);
+int		ft_sqrt(int nb);
 //simple sort
 void	simple_sort(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
+
 
 #endif
