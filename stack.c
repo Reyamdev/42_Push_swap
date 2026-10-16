@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:40:38 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/12 14:19:56 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/16 14:39:02 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_node	*create_s_node(int value)
 	if (!new_node)
 		return (NULL);
 	new_node->value = value;
+	new_node->rank = -1;
 	new_node->next = NULL;
 	new_node->prev = NULL;
 	return (new_node);
