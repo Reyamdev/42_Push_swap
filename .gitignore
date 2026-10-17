@@ -4,3 +4,5 @@ test.c
 test_simple
 a.out
 test_rank
+medium_tester.c
+test_medium

@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 15:23:12 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/16 16:29:58 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/17 18:50:36 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	assign_rank(t_stack *stack)
 {
-	int	counter;
+	int		counter;
 	t_node	*temporary;
 	t_node	*rank_stack;
 
@@ -48,4 +48,18 @@ int	ft_sqrt(int nb)
 		root++;
 	}
 	return (root - 1);
+}
+
+int	is_sorted(t_stack *stack)
+{
+	t_node	*node;
+
+	node = stack->top;
+	while (node && node->next)
+	{
+		if (node->value > node->next->value)
+			return (0);
+		node = node->next;
+	}
+	return (1);
 }

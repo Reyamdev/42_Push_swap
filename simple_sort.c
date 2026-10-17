@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 11:01:14 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/15 15:07:40 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/17 18:57:25 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	simple_sort(t_stack *stack_a, t_stack *stack_b, t_stats *stats)
 	int	size;
 	int	position;
 
-	if (!stack_a || !stack_b)
+	if (is_sorted(stack_a))
 		return ;
 	size = stack_a->size;
 	position = 0;
