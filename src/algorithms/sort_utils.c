@@ -6,11 +6,11 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 15:23:12 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/17 18:50:36 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 16:00:15 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 void	assign_rank(t_stack *stack)
 {

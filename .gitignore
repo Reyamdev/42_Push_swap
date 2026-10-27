@@ -6,3 +6,7 @@ a.out
 test_rank
 medium_tester.c
 test_medium
+test_complex
+libft.a
+medium_sortv2.c
+push_swap

@@ -6,11 +6,11 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 11:18:11 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/15 14:00:48 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 16:01:44 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 void	init_stats(t_stats *stats)
 {

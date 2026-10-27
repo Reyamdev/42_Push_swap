@@ -6,12 +6,12 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/11 13:02:44 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/15 12:49:27 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 16:01:54 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "libft.h"
+#include "../../push_swap.h"
+#include "../../libft/libft.h"
 
 static void	remove_top(t_stack *src)
 {

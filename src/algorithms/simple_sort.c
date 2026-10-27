@@ -6,11 +6,11 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 11:01:14 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/17 18:57:25 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 16:00:12 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 static int	find_smallest_value(t_stack *stack, t_node *smallest_node)
 {

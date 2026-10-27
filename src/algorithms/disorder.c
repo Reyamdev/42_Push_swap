@@ -6,11 +6,11 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 11:43:38 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/14 11:48:09 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 16:00:02 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 double	calculate_disorder(t_stack *stack)
 {

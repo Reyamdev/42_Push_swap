@@ -6,11 +6,11 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 09:45:11 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/17 18:59:27 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 16:00:09 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 t_node	*find_node(t_stack *stack)
 {

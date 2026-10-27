@@ -6,12 +6,12 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/10 21:53:46 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/12 13:16:47 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 16:02:22 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "libft.h"
+#include "../../push_swap.h"
+#include "../../libft/libft.h"
 
 static int	parse_flag(char *arg, t_config *config)
 {

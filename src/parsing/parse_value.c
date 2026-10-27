@@ -6,12 +6,12 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 13:10:52 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/12 13:25:58 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 16:02:19 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "libft.h"
+#include "../../push_swap.h"
+#include "../../libft/libft.h"
 
 static int	is_valid_number(char *arg)
 {

@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:41:04 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/17 18:50:15 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/26 17:54:44 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,11 @@ void	simple_sort(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 
 //medium sort
 void	medium_sort(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
+void	medium_sortv2(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 
-#endif
+void 	complex_sort(t_stack *a, t_stack *b, t_stats *stats);
+void	complex_sort_visual(t_stack *a, t_stack *b, t_stats *stats);
+
+//adaptive
+void 	adaptive_sort(t_stack *a, t_stack *b, t_stats *stats, double disorder);
+# endif

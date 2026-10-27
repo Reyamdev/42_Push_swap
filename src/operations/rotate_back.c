@@ -6,12 +6,12 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/11 14:02:37 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/15 11:42:35 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 16:02:02 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "libft.h"
+#include "../../push_swap.h"
+#include "../../libft/libft.h"
 
 static int	rotate_backwards(t_stack *stack)
 {

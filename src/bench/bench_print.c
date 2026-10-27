@@ -6,12 +6,12 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 13:57:15 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/15 14:00:09 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 16:01:31 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "libft.h"
+#include "../../push_swap.h"
+#include "../../libft/libft.h"
 
 static void	put_ulong_fd(unsigned long n, int fd)
 {

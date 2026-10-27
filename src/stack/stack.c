@@ -6,11 +6,11 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:40:38 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/16 14:39:02 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 16:02:29 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 t_node	*create_s_node(int value)
 {

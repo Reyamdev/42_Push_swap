@@ -6,12 +6,12 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/10 12:48:08 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/15 11:38:15 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 16:02:12 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "libft.h"
+#include "../../push_swap.h"
+#include "../../libft/libft.h"
 
 static int	swap(t_stack *stack)
 {
