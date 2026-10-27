@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 19:42:16 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/27 16:11:09 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/27 19:13:13 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,57 +66,3 @@ int	main(int argc, char **argv)
 	free_stack(&b);
 	return (0);
 }
-
-////////////////////////////////////////////////////////////////////////////////
-
-// static void	print_stack(char *name, t_stack *stack)
-// {
-// 	t_node	*node;
-
-// 	printf("%s: TOP -> ", name);
-// 	node = stack->top;
-// 	while (node)
-// 	{
-// 		printf("%d ", node->value);
-// 		node = node->next;
-// 	}
-// 	printf("<- BOTTOM\n");
-// }
-
-// int	main(void)
-// {
-// 	t_stack	a;
-// 	t_stack	b;
-// 	t_stats	stats;
-// 	double	disorder;
-
-// 	init_stack(&a);
-// 	init_stack(&b);
-// 	init_stats(&stats);
-
-// 	add_to_bottom(&a, create_s_node(1));
-// 	add_to_bottom(&a, create_s_node(5));
-// 	add_to_bottom(&a, create_s_node(4));
-// 	add_to_bottom(&a, create_s_node(3));
-// 	add_to_bottom(&a, create_s_node(2));
-
-// 	disorder = calculate_disorder(&a);
-
-// 	printf("BEFORE:\n");
-// 	print_stack("A", &a);
-// 	print_stack("B", &b);
-
-// 	printf("\nOPERATIONS:\n");
-// 	medium_sort(&a, &b, &stats);
-
-// 	printf("\nAFTER:\n");
-// 	print_stack("A", &a);
-// 	print_stack("B", &b);
-
-// 	printf("\n");
-// 	print_bench(&stats, disorder, STRATEGY_MEDIUM);
-
-// 	free_stack(&a);
-// 	free_stack(&b);
-// 	return (0);
-// }
