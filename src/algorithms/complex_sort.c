@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 11:14:46 by reyam             #+#    #+#             */
-/*   Updated: 2026/11/06 14:02:59 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/06 15:16:05 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	complex_sort(t_stack *a, t_stack *b, t_stats *stats)
 	if (is_sorted(a))
 		return ;
 	assign_rank(a);
-	max_rank = a->size -1;
+	max_rank = a->size - 1;
 	max_bits = 0;
 	while (max_rank > 0)
 	{
