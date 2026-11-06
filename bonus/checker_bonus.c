@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 19:07:52 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/28 19:49:25 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/06 15:13:11 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@
 
 // 7. Free both stacks and exit
 
-static int	checker_error(t_stack *a, t_stack *b, char *line)
+static int	checker_error(t_stack *a, t_stack *b)
 {
-	free(line);
 	free_stack(a);
 	free_stack(b);
 	ft_putstr_fd("Error\n", 2);
@@ -61,27 +60,38 @@ static int	parse_checker_arguments(t_stack *a, int argc, char **argv)
 	return (1);
 }
 
+static int	process_instructions(t_stack *a, t_stack *b)
+{
+	char	*line;
+
+	line = read_instruction();
+	while (line)
+	{
+		if (!valid_instruction(line))
+		{
+			free(line);
+			return (0);
+		}
+		execute_instruction(line, a, b);
+		free(line);
+		line = read_instruction();
+	}
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	a;
 	t_stack	b;
-	char	*line;
 
 	if (argc == 1)
 		return (0);
 	init_stack(&a);
 	init_stack(&b);
 	if (!parse_checker_arguments(&a, argc, argv))
-		return (checker_error(&a, &b, NULL));
-	line = read_instruction();
-	while (line)
-	{
-		if (!valid_instruction(line))
-			return (checker_error(&a, &b, line));
-		execute_instruction(line, &a, &b);
-		free(line);
-		line = read_instruction();
-	}
+		return (checker_error(&a, &b));
+	if (!process_instructions(&a, &b))
+		return (checker_error(&a, &b));
 	if (is_sorted(&a) && b.size == 0)
 		ft_putstr_fd("OK\n", 1);
 	else

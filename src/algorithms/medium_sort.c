@@ -6,43 +6,25 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 09:45:11 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/27 16:00:09 by reyam            ###   ########.fr       */
+/*   Updated: 2026/10/29 20:50:54 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-t_node	*find_node(t_stack *stack)
+int	find_rank(t_stack *stack)
 {
-	t_node	*temporary;
-	t_node	*highest_rank;
-
-	if (!stack || !stack->top)
-		return (NULL);
-	highest_rank = stack->top;
-	temporary = stack->top;
-	while (temporary)
-	{
-		if (temporary->rank > highest_rank->rank)
-		{
-			highest_rank = temporary;
-		}
-		temporary = temporary->next;
-	}
-	return (highest_rank);
-}
-
-int	find_value(t_stack *stack, t_node *biggest_node)
-{
+	int		highest_rank;
 	int		position;
 	t_node	*temporary;
 
 	position = 0;
+	highest_rank = stack->size - 1;
 	temporary = stack->top;
-	while (temporary != biggest_node)
+	while (temporary->rank != highest_rank)
 	{
-		position++;
 		temporary = temporary->next;
+		position++;
 	}
 	return (position);
 }
@@ -82,7 +64,7 @@ void	clear_b(t_stack *stack_a, t_stack *stack_b, t_stats *stats)
 	position = 0;
 	while (size > 0)
 	{
-		position = find_value(stack_b, find_node(stack_b));
+		position = find_rank(stack_b);
 		shorter_rotate(position, stack_b, stats);
 		pa(stack_a, stack_b, stats);
 		size--;

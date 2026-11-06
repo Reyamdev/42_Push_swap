@@ -6,82 +6,46 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/10 12:48:08 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/27 16:02:12 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/06 13:28:47 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 #include "../../libft/libft.h"
 
+/*
+** Swap the first two nodes of the stack (sa/sb).
+** Save the old top, then make the second node the new top.
+** Handle size 2 separately to update the bottom pointer.
+** For larger stacks, reconnect the old top to the third node.
+** Return 0 if swapping is impossible, otherwise 1.
+*/
+
 static int	swap(t_stack *stack)
 {
-	t_node	*temporary;
+	t_node	*old_top;
 
 	if (stack == NULL || stack->size < 2)
 		return (0);
-	temporary = stack->top;
-	stack->top = temporary->next;
+	old_top = stack->top;
+	stack->top = old_top->next;
 	if (stack->size == 2)
 	{
-		stack->bottom = temporary;
-		stack->top->next = temporary;
+		stack->bottom = old_top;
+		stack->top->next = old_top;
 		stack->bottom->next = NULL;
 		stack->bottom->prev = stack->top;
 	}
 	else
 	{
-		temporary->next = temporary->next->next;
-		stack->top->next = temporary;
-		temporary->prev = stack->top;
-		temporary->next->prev = temporary;
+		old_top->next = old_top->next->next;
+		stack->top->next = old_top;
+		old_top->prev = stack->top;
+		old_top->next->prev = old_top;
 	}
 	stack->top->prev = NULL;
 	return (1);
 }
-
-/*
-** swap flow:
-**
-** before:
-** TOP -> [10] <-> [20] <-> [30] <- BOTTOM
-**
-** after sa:
-** TOP -> [20] <-> [10] <-> [30] <- BOTTOM
-**
-** first  = 10 (old top)
-** second = 20 (new top)
-** third  = 30 (rest of stack, can be NULL)
-**
-** 1. second becomes the new top
-** 2. first moves directly below second
-** 3. first reconnects to third
-** 4. if third does not exist, first becomes the new bottom
-**
-** size < 2: do nothing
-*/
-
-// static int	swapv1(t_stack *stack)
-// {
-// 	t_node	*first;
-// 	t_node	*second;
-// 	t_node	*third;
-
-// 	if (!stack || stack->size < 2)
-// 		return (0);
-// 	first = stack->top;
-// 	second = first->next;
-// 	third = second->next;
-// 	second->prev = NULL;
-// 	second->next = first;
-// 	first->next = third;
-// 	first->prev = second;
-// 	if (third)
-// 		third->prev = first;
-// 	else
-// 		stack->bottom = first;
-// 	stack->top = second;
-// 	return (1);
-// }
 
 void	sa(t_stack *stack, t_stats *stats)
 {

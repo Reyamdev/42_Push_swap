@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:41:04 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/26 17:54:44 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/06 14:54:04 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ double	calculate_disorder(t_stack *stack);
 void	init_stats(t_stats *stats);
 void	record_operation(t_stats *stats, t_operation op);
 void	print_bench(t_stats *stats, double disorder, t_strategy strategy);
+
 //operations
 void	sa(t_stack *stack, t_stats *stats);
 void	sb(t_stack *stack, t_stats *stats);
@@ -108,6 +109,7 @@ void	rrr(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 void	assign_rank(t_stack *stack);
 int		ft_sqrt(int nb);
 int		is_sorted(t_stack *stack);
+
 //simple sort
 void	simple_sort(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 
@@ -115,9 +117,9 @@ void	simple_sort(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 void	medium_sort(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 void	medium_sortv2(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 
-void 	complex_sort(t_stack *a, t_stack *b, t_stats *stats);
-void	complex_sort_visual(t_stack *a, t_stack *b, t_stats *stats);
+//complex sort
+void	complex_sort(t_stack *a, t_stack *b, t_stats *stats);
 
 //adaptive
-void 	adaptive_sort(t_stack *a, t_stack *b, t_stats *stats, double disorder);
-# endif
+void	adaptive_sort(t_stack *a, t_stack *b, t_stats *stats, double disorder);
+#endif

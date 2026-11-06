@@ -6,26 +6,33 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 18:32:32 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/27 16:02:06 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/06 13:31:14 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 #include "../../libft/libft.h"
 
+/*
+** Reverse rotate the stack (rra/rrb): move the bottom node to the top.
+** Save the old bottom, make the previous node the new bottom,
+** then link the old bottom before the top node.
+** Return 0 if rotation is impossible, otherwise 1.
+*/
+
 static int	rotate_forwards(t_stack *stack)
 {
-	t_node	*temporary;
+	t_node	*old_bottom;
 
 	if (stack == NULL || stack->top == NULL || stack->size < 2)
 		return (0);
-	temporary = stack->bottom;
+	old_bottom = stack->bottom;
 	stack->bottom = stack->bottom->prev;
 	stack->bottom->next = NULL;
-	temporary->next = stack->top;
-	stack->top->prev = temporary;
-	stack->top = temporary;
-	temporary->prev = NULL;
+	old_bottom->next = stack->top;
+	stack->top->prev = old_bottom;
+	stack->top = old_bottom;
+	stack->top->prev = NULL;
 	return (1);
 }
 

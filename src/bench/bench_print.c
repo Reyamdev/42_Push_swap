@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 13:57:15 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/27 16:01:31 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/06 12:39:30 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ static void	put_ulong_fd(unsigned long n, int fd)
 		put_ulong_fd(n / 10, fd);
 	ft_putchar_fd((n % 10) + '0', fd);
 }
+
+/*
+** Convert disorder (0.0 to 1.0) into a percentage with 2 decimals.
+** Multiply by 10000 to keep the decimals as integers.
+** Add 0.5 to round to the nearest hundredth of a percent.
+** Divide by 100 for the whole part, modulo 100 for the decimals.
+*/
 
 static void	print_disorder(double disorder)
 {

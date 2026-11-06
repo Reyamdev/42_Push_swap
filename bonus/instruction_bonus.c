@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 19:34:47 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/28 19:35:10 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/06 14:04:35 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,41 @@ int	valid_instruction(char *line)
 	if (instruction_match(line, "rrr\n"))
 		return (1);
 	return (0);
+}
+
+void	execute_instruction(char *line, t_stack *a, t_stack *b)
+{
+	if (instruction_match(line, "sa\n"))
+		swap(a);
+	else if (instruction_match(line, "sb\n"))
+		swap(b);
+	else if (instruction_match(line, "ss\n"))
+	{
+		swap(a);
+		swap(b);
+	}
+	else if (instruction_match(line, "pa\n"))
+		push(a, b);
+	else if (instruction_match(line, "pb\n"))
+		push(b, a);
+	else if (instruction_match(line, "ra\n"))
+		rotate_backwards(a);
+	else if (instruction_match(line, "rb\n"))
+		rotate_backwards(b);
+	else if (instruction_match(line, "rr\n"))
+	{
+		rotate_backwards(a);
+		rotate_backwards(b);
+	}
+	else if (instruction_match(line, "rra\n"))
+		rotate_forwards(a);
+	else if (instruction_match(line, "rrb\n"))
+		rotate_forwards(b);
+	else if (instruction_match(line, "rrr\n"))
+	{
+		rotate_forwards(a);
+		rotate_forwards(b);
+	}
+	else
+		return ;
 }

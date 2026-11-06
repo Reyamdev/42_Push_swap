@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/10 21:53:46 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/27 16:02:22 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/06 12:31:10 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static int	parse_flag(char *arg, t_config *config)
 		config->strategy = STRATEGY_MEDIUM;
 	else if (!ft_strncmp(arg, "--complex", 10))
 		config->strategy = STRATEGY_COMPLEX;
-	else if (!ft_strncmp(arg, "--bench", 8))
-		config->bench = 1;
 	else if (!ft_strncmp(arg, "--adaptive", 11))
 		config->strategy = STRATEGY_ADAPTIVE;
+	else if (!ft_strncmp(arg, "--bench", 8))
+		config->bench = 1;
 	else
 		return (0);
 	return (1);

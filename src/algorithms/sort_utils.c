@@ -6,11 +6,18 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 15:23:12 by zkotab            #+#    #+#             */
-/*   Updated: 2026/10/27 16:00:15 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/06 12:51:59 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+
+/*
+** Assign each node a rank based on its value.
+** Number of elements smaller than the current value.
+** The smallest value gets rank 0, the largest gets rank size - 1.
+** This lets the sorting algorithms work with ranks instead of raw values.
+*/
 
 void	assign_rank(t_stack *stack)
 {

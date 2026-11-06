@@ -6,13 +6,13 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 17:36:30 by reyam             #+#    #+#             */
-/*   Updated: 2026/10/27 15:59:45 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/06 13:57:30 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void 	adaptive_sort(t_stack *a, t_stack *b, t_stats *stats, double disorder)
+void	adaptive_sort(t_stack *a, t_stack *b, t_stats *stats, double disorder)
 {
 	if (disorder < 0.2)
 		simple_sort(a, b, stats);
