@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:41:04 by reyam             #+#    #+#             */
-/*   Updated: 2026/11/06 14:54:04 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/08 16:48:57 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <unistd.h>
-# include <stdio.h>
 # include <limits.h>
 
 typedef struct s_node
@@ -48,7 +47,6 @@ typedef struct s_config
 	int			bench;
 }	t_config;
 
-//bench stuff
 typedef enum e_operation
 {
 	OP_SA,
@@ -115,11 +113,11 @@ void	simple_sort(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 
 //medium sort
 void	medium_sort(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
-void	medium_sortv2(t_stack *stack_a, t_stack *stack_b, t_stats *stats);
 
 //complex sort
 void	complex_sort(t_stack *a, t_stack *b, t_stats *stats);
 
 //adaptive
 void	adaptive_sort(t_stack *a, t_stack *b, t_stats *stats, double disorder);
+
 #endif
