@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 15:23:12 by zkotab            #+#    #+#             */
-/*   Updated: 2026/11/06 12:51:59 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/12 15:50:26 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,23 @@
 
 void	assign_rank(t_stack *stack)
 {
-	int		counter;
-	t_node	*temporary;
-	t_node	*rank_stack;
+	int		rank;
+	t_node	*node_to_rank;
+	t_node	*comparison_node;
 
-	rank_stack = stack->top;
-	while (rank_stack)
+	node_to_rank = stack->top;
+	while (node_to_rank)
 	{
-		counter = 0;
-		temporary = stack->top;
-		while (temporary)
+		rank = 0;
+		comparison_node = stack->top;
+		while (comparison_node)
 		{
-			if (rank_stack->value > temporary->value)
-				counter++;
-			temporary = temporary->next;
+			if (node_to_rank->value > comparison_node->value)
+				rank++;
+			comparison_node = comparison_node->next;
 		}
-		rank_stack->rank = counter;
-		rank_stack = rank_stack->next;
+		node_to_rank->rank = rank;
+		node_to_rank = node_to_rank->next;
 	}
 }
 
