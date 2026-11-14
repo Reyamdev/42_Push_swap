@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/09 18:41:04 by reyam             #+#    #+#             */
-/*   Updated: 2026/11/08 16:48:57 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/14 11:21:57 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	init_stack(t_stack *stack);
 void	add_to_bottom(t_stack *stack, t_node *new_node);
 void	free_stack(t_stack *stack);
 int		parse_and_add(t_stack *a, char *arg);
+int		parse_numbers_arg(t_stack *a, char *arg);
 int		parse_arguments(t_stack *a, t_config *config, int argc, char **argv);
 double	calculate_disorder(t_stack *stack);
 

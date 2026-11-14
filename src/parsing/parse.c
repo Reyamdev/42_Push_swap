@@ -6,7 +6,7 @@
 /*   By: reyam <reyam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/10 21:53:46 by reyam             #+#    #+#             */
-/*   Updated: 2026/11/08 16:23:05 by reyam            ###   ########.fr       */
+/*   Updated: 2026/11/14 11:17:36 by reyam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	parse_arguments(t_stack *a, t_config *config, int argc, char **argv)
 	{
 		if (!parse_flag(argv[i], config))
 		{
-			if (!parse_and_add(a, argv[i]))
+			if (!parse_numbers_arg(a, argv[i]))
 				return (0);
 		}
 		i++;

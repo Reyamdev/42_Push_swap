@@ -10,6 +10,7 @@ SRCS =	src/main.c \
 		src/stack/stack.c \
 		src/parsing/parse.c \
 		src/parsing/parse_value.c \
+		src/parsing/parse_numbers_arg.c \
 		src/algorithms/disorder.c \
 		src/algorithms/sort_utils.c \
 		src/algorithms/simple_sort.c \
@@ -31,6 +32,7 @@ BONUS_SRCS =	bonus/checker_bonus.c \
 
 SHARED_SRCS =	src/stack/stack.c \
 				src/parsing/parse_value.c \
+				src/parsing/parse_numbers_arg.c \
 				src/algorithms/sort_utils.c
 
 OBJS = $(SRCS:.c=.o)
